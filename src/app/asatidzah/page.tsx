@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabaseClient';
+import Image from 'next/image';
 
 export default async function Asatidzah() {
   // Fetch data dari Supabase
@@ -23,10 +24,23 @@ export default async function Asatidzah() {
       <div className="bg-white rounded-xl shadow-md p-4 sm:p-8 w-full max-w-2xl text-center">
         <h1 className="text-lg sm:text-2xl md:text-3xl font-semibold mb-4 text-gray-800">Daftar Asatidzah</h1>
         <ul className="space-y-6">
-          {pemateri?.map((ustadz: any) => (
+          {pemateri?.map((ustadz: {
+  id: string;
+  nama: string;
+  akademik: string;
+  bio: string;
+  kontak_wa: string;
+  foto_url?: string;
+}) => (
             <li key={ustadz.id} className="bg-gray-50 rounded-lg p-4 flex flex-col items-center">
               {ustadz.foto_url && (
-                <img src={ustadz.foto_url} alt={ustadz.nama} width={100} height={100} className="rounded-full mb-2 object-cover" />
+                <Image
+                  src={ustadz.foto_url}
+                  alt={ustadz.nama}
+                  width={100}
+                  height={100}
+                  className="rounded-full mb-2 object-cover"
+                />
               )}
               <h2 className="text-xl font-bold text-gray-800">{ustadz.nama}</h2>
               <p className="text-gray-600"><b>Akademik:</b> {ustadz.akademik}</p>

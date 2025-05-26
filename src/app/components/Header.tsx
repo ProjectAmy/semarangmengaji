@@ -19,7 +19,7 @@ export default function Header() {
             <li><Link href="/" className="hover:text-blue-600 transition-colors">Home</Link></li>
             <li><Link href="/asatidzah" className="hover:text-blue-600 transition-colors">Asatidzah</Link></li>
             <li><Link href="/lokasi" className="hover:text-blue-600 transition-colors">Lokasi</Link></li>
-            <li><Link href="/jumat" className="hover:text-blue-600 transition-colors">Khotbah Jum'at</Link></li>
+            <li><Link href="/jumat" className="hover:text-blue-600 transition-colors">Khotbah Jum&#39;at</Link></li>
             <li><Link href="/about-us" className="hover:text-blue-600 transition-colors">About Us</Link></li>
           </ul>
         </nav>

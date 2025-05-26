@@ -23,7 +23,13 @@ export default async function Lokasi() {
       <div className="bg-white rounded-xl shadow-md p-4 sm:p-8 w-full max-w-2xl text-center">
         <h1 className="text-lg sm:text-2xl md:text-3xl font-semibold mb-4 text-gray-800">Daftar Lokasi Kajian</h1>
         <ul className="space-y-6">
-          {lokasi?.map((item: any) => (
+          {lokasi?.map((item: {
+  id: string;
+  nama: string;
+  alamat: string;
+  keterangan: string;
+  link_map?: string;
+}) => (
             <li key={item.id} className="bg-gray-50 rounded-lg p-4 text-left">
               <h2 className="text-xl font-bold text-gray-800">{item.nama}</h2>
               <p className="text-gray-600"><b>Alamat:</b> {item.alamat}</p>
