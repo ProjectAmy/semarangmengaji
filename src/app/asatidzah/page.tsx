@@ -1,12 +1,22 @@
 import { supabase } from '@/lib/supabaseClient';
-import Image from 'next/image';
+
+
+interface Ustadz {
+  id: string;
+  nama: string;
+  panggilan: string;
+  titel: string;
+  akademik: string;
+  bio: string;
+  kontak_wa: string;
+}
 
 export default async function Asatidzah() {
   // Fetch data dari Supabase
   const { data: pemateri, error } = await supabase
     .from('pemateri')
-    .select('*')
-    .order('nama', { ascending: true });
+    .select('id, nama, panggilan, titel, akademik, bio, kontak_wa')
+    .order('nama', { ascending: true }) as { data: Ustadz[] | null, error: any };
 
   if (error) {
     return (
@@ -21,34 +31,15 @@ export default async function Asatidzah() {
 
   return (
     <main className="flex-grow w-full px-2 sm:px-4 py-8 flex flex-col items-center justify-center">
-      <div className="bg-white rounded-xl shadow-md p-4 sm:p-8 w-full max-w-2xl text-center">
-        <h1 className="text-lg sm:text-2xl md:text-3xl font-semibold mb-4 text-gray-800">Daftar Asatidzah</h1>
-        <ul className="space-y-6">
-          {pemateri?.map((ustadz: {
-  id: string;
-  nama: string;
-  akademik: string;
-  bio: string;
-  kontak_wa: string;
-  foto_url?: string;
-}) => (
-            <li key={ustadz.id} className="bg-gray-50 rounded-lg p-4 flex flex-col items-center">
-              {ustadz.foto_url && (
-                <Image
-                  src={ustadz.foto_url}
-                  alt={ustadz.nama}
-                  width={100}
-                  height={100}
-                  className="rounded-full mb-2 object-cover"
-                />
-              )}
-              <h2 className="text-xl font-bold text-gray-800">{ustadz.nama}</h2>
-              <p className="text-gray-600"><b>Akademik:</b> {ustadz.akademik}</p>
-              <p className="text-gray-600"><b>Bio:</b> {ustadz.bio}</p>
-              <p className="text-gray-600"><b>Kontak WA:</b> {ustadz.kontak_wa}</p>
+      <div className="bg-white rounded-xl shadow-md p-4 sm:p-8 w-full max-w-2xl">
+        <h1 className="text-lg sm:text-2xl md:text-3xl font-semibold mb-6 text-gray-800 text-center">Daftar Asatidzah</h1>
+        <ol className="space-y-2 list-decimal list-inside">
+          {pemateri?.map((ustadz: Ustadz, index: number) => (
+            <li key={ustadz.id} className="text-gray-800 py-1">
+              {ustadz.panggilan.charAt(0).toUpperCase() + ustadz.panggilan.slice(1)} {ustadz.nama}{ustadz.titel ? `, ${ustadz.titel}` : ''}
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
     </main>
   );

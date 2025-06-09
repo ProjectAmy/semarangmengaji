@@ -17,10 +17,11 @@ export default function Header() {
         <nav className="hidden md:block">
           <ul className="flex gap-4 lg:gap-8 text-gray-700 font-medium text-sm lg:text-base">
             <li><Link href="/" className="hover:text-blue-600 transition-colors">Kajian Rutin</Link></li>
-<li><Link href="/tematik" className="hover:text-blue-600 transition-colors">Tematik</Link></li>
+            <li><Link href="/tematik" className="hover:text-blue-600 transition-colors">Tematik</Link></li>
+            <li><Link href="/jumat" className="hover:text-blue-600 transition-colors">Khotbah Jum&#39;at</Link></li>
             <li><Link href="/asatidzah" className="hover:text-blue-600 transition-colors">Asatidzah</Link></li>
             <li><Link href="/lokasi" className="hover:text-blue-600 transition-colors">Lokasi</Link></li>
-            <li><Link href="/jumat" className="hover:text-blue-600 transition-colors">Khotbah Jum&#39;at</Link></li>
+            <li><Link href="/partners" className="hover:text-blue-600 transition-colors">Our Partners</Link></li>
             <li><Link href="/about-us" className="hover:text-blue-600 transition-colors">About Us</Link></li>
           </ul>
         </nav>
@@ -40,10 +41,11 @@ export default function Header() {
         <nav className="md:hidden bg-white shadow-lg border-t border-gray-100">
           <ul className="flex flex-col gap-1 px-6 py-4 text-gray-700 font-medium text-base animate-fade-in">
             <li><Link href="/" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Kajian Rutin</Link></li>
-<li><Link href="/tematik" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Tematik</Link></li>
+            <li><Link href="/tematik" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Tematik</Link></li>
+            <li><Link href="/jumat" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Khotbah Jum'at</Link></li>
             <li><Link href="/asatidzah" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Asatidzah</Link></li>
             <li><Link href="/lokasi" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Lokasi</Link></li>
-            <li><Link href="/jumat" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Jumat</Link></li>
+            <li><Link href="/partners" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Our Partners</Link></li>
             <li><Link href="/about-us" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">About Us</Link></li>
           </ul>
         </nav>
