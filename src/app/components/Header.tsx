@@ -42,7 +42,7 @@ export default function Header() {
           <ul className="flex flex-col gap-1 px-6 py-4 text-gray-700 font-medium text-base animate-fade-in">
             <li><Link href="/" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Kajian Rutin</Link></li>
             <li><Link href="/tematik" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Tematik</Link></li>
-            <li><Link href="/jumat" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Khotbah Jum'at</Link></li>
+            <li><Link href="/jumat" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Khotbah Jum&apos;at</Link></li>
             <li><Link href="/asatidzah" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Asatidzah</Link></li>
             <li><Link href="/lokasi" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Lokasi</Link></li>
             <li><Link href="/partners" className="block py-2 px-2 rounded hover:bg-blue-50 hover:text-blue-600 transition-colors">Our Partners</Link></li>
